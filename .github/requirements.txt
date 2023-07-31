@@ -1,2 +1,2 @@
 jupyter-book==0.15.1
-nbconvert==7.7.2
+nbconvert==7.7.3
