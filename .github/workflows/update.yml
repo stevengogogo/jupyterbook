@@ -17,7 +17,7 @@ jobs:
         with:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Cache Julia
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.julia/artifacts
