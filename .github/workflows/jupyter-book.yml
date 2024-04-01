@@ -25,7 +25,7 @@ jobs:
         run: pip install -r requirements.txt -r .github/requirements.txt
         if: steps.cache-virtualenv.outputs.cache-hit != 'true'
       - name: Setup Julia ${{ env.JULIA_VERSION }}
-        uses: julia-actions/setup-julia@v1
+        uses: julia-actions/setup-julia@v2
         with:
           version: ${{ env.JULIA_VERSION }}
       - name: Cache Julia
