@@ -28,7 +28,7 @@ jobs:
             ${{ runner.os }}-julia-${{ hashFiles('Project.toml') }}-
             ${{ runner.os }}-julia-
       - name: Setup Julia ${{ env.JULIA_VERSION }}
-        uses: julia-actions/setup-julia@v1
+        uses: julia-actions/setup-julia@v2
         with:
           version: ${{ env.JULIA_VERSION }}
       - name: Update Julia dependencies
