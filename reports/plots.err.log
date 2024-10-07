@@ -1,0 +1,63 @@
+Traceback (most recent call last):
+  File "/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+using Plots
+pyplot()
+------------------
+
+
+InitError: KeyError: key "register_cmap" not found
+during initialization of module PyPlot
+
+Stacktrace:
+  [1] __getproperty
+    @ ~/.julia/packages/PyCall/7a7w0/src/PyCall.jl:307 [inlined]
+  [2] getproperty
+    @ ~/.julia/packages/PyCall/7a7w0/src/PyCall.jl:311 [inlined]
+  [3] init_colormaps()
+    @ PyPlot ~/.julia/packages/PyPlot/XaELc/src/colormaps.jl:58
+  [4] __init__()
+    @ PyPlot ~/.julia/packages/PyPlot/XaELc/src/init.jl:222
+  [5] _include_from_serialized(path::String, depmods::Vector{Any})
+    @ Base ./loading.jl:768
+  [6] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String)
+    @ Base ./loading.jl:854
+  [7] _require(pkg::Base.PkgId)
+    @ Base ./loading.jl:1097
+  [8] require(uuidkey::Base.PkgId)
+    @ Base ./loading.jl:1013
+  [9] require(into::Module, mod::Symbol)
+    @ Base ./loading.jl:997
+ [10] top-level scope
+    @ ~/.julia/packages/Plots/NQpB8/src/backends.jl:676
+ [11] eval
+    @ ./boot.jl:373 [inlined]
+ [12] _initialize_backend(#unused#::Plots.PyPlotBackend)
+    @ Plots ~/.julia/packages/Plots/NQpB8/src/backends.jl:675
+ [13] backend(pkg::Plots.PyPlotBackend)
+    @ Plots ~/.julia/packages/Plots/NQpB8/src/backends.jl:176
+ [14] #pyplot#247
+    @ ~/.julia/packages/Plots/NQpB8/src/backends.jl:31 [inlined]
+ [15] pyplot()
+    @ Plots ~/.julia/packages/Plots/NQpB8/src/backends.jl:31
+ [16] top-level scope
+    @ In[1]:2
+ [17] eval
+    @ ./boot.jl:373 [inlined]
+ [18] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
+    @ Base ./loading.jl:1196
+
